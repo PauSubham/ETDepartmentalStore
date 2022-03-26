@@ -1,0 +1,37 @@
+<div class="card-box">
+  <div class="row">
+    <div class="col-sm-4">
+      <a routerLink="create" id="addbtn" class="btn btn-success btn-rounded">Add New</a>
+    </div>
+  </div>
+  <br>
+
+  <div class="row">
+    <div class="table-responsive">
+
+      <table class="table table-bordered" id="datatable" role="grid">
+        <thead class="bg-primary text-white">
+          <tr role="row">
+            <th>Supplier ID</th>
+            <th>Supplier Company Name</th>
+            <th>Contact Person</th>
+            <th>Address</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of supplierdata">
+            <td>{{item.supplierID}}</td>
+            <td>{{item.supplierCompanyName}}</td>
+            <td>{{item.contactPerson}}</td>
+            <td>{{item.address}}</td>
+            <td><button class="btn btn-primary" routerLink="edit/{{item.supplierID}}">Edit</button> |
+              <button (click)="delete(item.supplierID)" class="btn btn-danger">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </div>
+  </div>
+</div>

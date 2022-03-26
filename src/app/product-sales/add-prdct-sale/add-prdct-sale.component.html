@@ -1,0 +1,83 @@
+<div class="card-box">
+    <form [formGroup]="productsalesform" (ngSubmit)="AddProductSales()">
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Product Sales Details</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Product ID</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="productID"
+                        autocomplete="off" />
+                    <span *ngIf="productID && productID.invalid && productID.touched" class="error">Please Enter a
+                        Valid Product ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" formControlName="productName" autocomplete="off" />
+                    <span *ngIf="productName && productName.invalid && productName.touched" class="error">Please Enter
+                        Product Name</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>HSN Number</label>
+                    <input type="text" class="form-control" formControlName="hsnNumber" autocomplete="off" />
+                    <span *ngIf="hsnNumber && hsnNumber.invalid && hsnNumber.touched" class="error">Please
+                        Enter HSN Number</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Units</label>
+                    <input type="text" class="form-control" formControlName="unit" autocomplete="off" />
+                    <span *ngIf="unit && unit.invalid && unit.touched" class="error">Please Enter Number of Units
+                        Sold</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Sale Price</label>
+                    <input type="text" class="form-control" formControlName="salePrice" autocomplete="off" />
+                    <span *ngIf="salePrice && salePrice.invalid && salePrice.touched" class="error">Please Enter Sale
+                        Price</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>GST%</label>
+                    <input type="text" class="form-control" formControlName="gst" autocomplete="off" />
+                    <span *ngIf="gst && gst.invalid && gst.touched" class="error">Please Enter GST Percentage</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>

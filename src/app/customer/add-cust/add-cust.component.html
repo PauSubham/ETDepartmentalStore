@@ -1,0 +1,64 @@
+<div class="card-box">
+    <form [formGroup]="customerform" (ngSubmit)="AddCustomer()">
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Customer Details</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Customer ID</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="customerID"
+                        autocomplete="off" />
+                    <span *ngIf="customerID && customerID.invalid && customerID.touched" class="error">Please Enter a
+                        Valid ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Customer Company Name</label>
+                    <input type="text" class="form-control" formControlName="customerCompanyName" autocomplete="off" />
+                    <span *ngIf="customerCompanyName && customerCompanyName.invalid && customerCompanyName.touched"
+                        class="error">Please Enter Customer Company Name</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Contact Person</label>
+                    <input type="text" class="form-control" formControlName="contactPerson" autocomplete="off" />
+                    <span *ngIf="contactPerson && contactPerson.invalid && contactPerson.touched" class="error">Please
+                        Enter Contact Person</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" formControlName="address" autocomplete="off" />
+                    <span *ngIf="address && address.invalid && address.touched" class="error">Please Enter Your
+                        Address</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>

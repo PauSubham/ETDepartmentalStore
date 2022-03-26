@@ -1,0 +1,83 @@
+<div class="card-box">
+    <form [formGroup]="productpurchaseform" (ngSubmit)="AddProductPurchase()">
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Product Purchase Details</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Item ID</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="itemID" autocomplete="off" />
+                    <span *ngIf="itemID && itemID.invalid && itemID.touched" class="error">Please Enter a
+                        Valid Item ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Product Name</label>
+                    <input type="text" class="form-control" formControlName="productName" autocomplete="off" />
+                    <span *ngIf="productName && productName.invalid && productName.touched" class="error">Please Enter
+                        the Name of the Product</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Department</label>
+                    <input type="text" class="form-control" formControlName="department" autocomplete="off" />
+                    <span *ngIf="department && department.invalid && department.touched" class="error">Please
+                        Enter Department of the Product</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Size</label>
+                    <input type="text" class="form-control" formControlName="size" autocomplete="off" />
+                    <span *ngIf="size && size.invalid && size.touched" class="error">Please Enter the Size of the
+                        Product</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Length</label>
+                    <input type="text" class="form-control" formControlName="length" autocomplete="off" />
+                    <span *ngIf="length && length.invalid && length.touched" class="error">Please Enter the Length of
+                        the Product</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Price</label>
+                    <input type="text" class="form-control" formControlName="price" autocomplete="off" />
+                    <span *ngIf="price && price.invalid && price.touched" class="error">Please Enter the Price of the
+                        Product</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>

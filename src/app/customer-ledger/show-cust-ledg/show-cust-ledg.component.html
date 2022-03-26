@@ -1,0 +1,40 @@
+<div class="card-box">
+  <div class="row">
+      <div class="col-sm-4">
+          <a routerLink="create" id="addbtn" class="btn btn-success btn-rounded">Add New</a>
+      </div>
+  </div>
+  <br>
+
+  <div class="row">
+      <div class="table-responsive">
+
+          <table class="table table-bordered" id="datatable" role="grid">
+              <thead class="bg-primary text-white">
+                  <tr role="row">
+                      <th>Invoice Payment ID</th>
+                      <th>Invoice ID</th>
+                      <th>Grand Total Amount</th>
+                      <th>Paid Amount</th>
+                      <th>Due Amount</th>
+                      <th>Balance Amount</th>
+                      <th>Action</th>
+                  </tr>
+              </thead>
+              <tbody>
+                  <tr *ngFor="let item of customerledgerdata">
+                      <td>{{item.invoicePaymentID}}</td>
+                      <td>{{item.invoiceID}}</td>
+                      <td>{{item.grandTotalAmount}}</td>
+                      <td>{{item.paidAmount}}</td>
+                      <td>{{item.dueAmount}}</td>
+                      <td>{{item.balanceAmount}}</td>
+                      <td><button class="btn btn-primary" routerLink="edit/{{item.invoicePaymentID}}">Edit</button> |
+                          <button (click)="delete(item.invoicePaymentID)" class="btn btn-danger">Delete</button></td>
+                  </tr>
+              </tbody>
+          </table>
+
+      </div>
+  </div>
+</div>

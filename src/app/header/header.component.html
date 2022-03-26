@@ -1,0 +1,32 @@
+<mat-toolbar class="example-spacer" color="primary">
+    <mat-toolbar-row>
+        <button mat-icon-button>
+            <mat-icon (click)="sidenav.toggle()">menu</mat-icon>
+        </button>
+        <h1>ET Departmental Store</h1>
+    </mat-toolbar-row>
+</mat-toolbar>
+
+<mat-sidenav-container>
+    <mat-sidenav #sidenav opened="true" mode="side">
+        <mat-nav-list>
+            <a mat-list-item routerLink="employees">Employees</a>
+            <a mat-list-item routerLink="employee-designation">Employee Designation</a>
+            <a mat-list-item routerLink="customer">Customer</a>
+            <a mat-list-item routerLink="customer-ledger">Customer Ledger</a>
+            <a mat-list-item routerLink="product-sales">Product Sales</a>
+            <a mat-list-item routerLink="product-purchase">Product Purchase</a>
+            <a mat-list-item routerLink="supplier">Supplier</a>
+            <a mat-list-item routerLink="supplier-ledger">Supplier Ledger</a>
+            <a mat-list-item routerLink="purchase">Purchase</a>
+            <a mat-list-item routerLink="sales">Sales</a>
+        </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <div style="height: 88vh;">
+            <router-outlet></router-outlet>
+        </div>
+    </mat-sidenav-content>
+    <ng-content></ng-content>
+</mat-sidenav-container>
+

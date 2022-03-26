@@ -1,0 +1,81 @@
+<div class="card-box">
+    <form [formGroup]="customerledgerform" (ngSubmit)="AddCustomerLedger()">
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Customer Ledger</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Invoice Payment ID</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="invoicePaymentID"
+                        autocomplete="off" />
+                    <span *ngIf="invoicePaymentID && invoicePaymentID.invalid && invoicePaymentID.touched" class="error">Please Enter a
+                        Valid ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Invoice ID</label>
+                    <input type="text" class="form-control" formControlName="invoiceID" autocomplete="off" />
+                    <span *ngIf="invoiceID && invoiceID.invalid && invoiceID.touched"
+                        class="error">Please Enter Valid Invoice ID</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Grand Total Amount</label>
+                    <input type="text" class="form-control" formControlName="grandTotalAmount" autocomplete="off" />
+                    <span *ngIf="grandTotalAmount && grandTotalAmount.invalid && grandTotalAmount.touched" class="error">Please
+                        Enter Grand Total Amount</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Paid Amount</label>
+                    <input type="text" class="form-control" formControlName="paidAmount" autocomplete="off" />
+                    <span *ngIf="paidAmount && paidAmount.invalid && paidAmount.touched" class="error">Please Enter The Paid Amount</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Due Amount</label>
+                    <input type="text" class="form-control" formControlName="dueAmount" autocomplete="off" />
+                    <span *ngIf="dueAmount && dueAmount.invalid && dueAmount.touched" class="error">Please Enter The Due Amount</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Balance Amount</label>
+                    <input type="text" class="form-control" formControlName="balanceAmount" autocomplete="off" />
+                    <span *ngIf="balanceAmount && balanceAmount.invalid && balanceAmount.touched" class="error">Please Enter The Balance Amount</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>

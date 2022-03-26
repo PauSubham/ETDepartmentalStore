@@ -1,0 +1,56 @@
+<div class="card-box">
+    <form [formGroup]="employeedesignationform" (ngSubmit)="AddEmployeeDesignation()">
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Employee Designation</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Designation Name</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="designationName"
+                        autocomplete="off" />
+                    <span *ngIf="designationName && designationName.invalid && designationName.touched"
+                        class="error">Please Enter a
+                        Valid Designation</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Role Name</label>
+                    <input type="text" class="form-control" formControlName="roleName" autocomplete="off" />
+                    <span *ngIf="roleName && roleName.invalid && roleName.touched" class="error">Please Enter Your Role
+                        Name</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Department Name</label>
+                    <input type="text" class="form-control" formControlName="departmentName" autocomplete="off" />
+                    <span *ngIf="departmentName && departmentName.invalid && departmentName.touched"
+                        class="error">Please
+                        Enter Your Department Name</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>

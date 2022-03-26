@@ -1,0 +1,68 @@
+<div class="card-box">
+    <form [formGroup]="employeeform" (ngSubmit)="AddEmployee()" >
+        <div class="row" style="text-align: center;display: block;">
+            <h2>Add/Edit Employee Details</h2>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label for="txtcode">Employee ID</label>
+                    <input type="text" id="txtcode" class="form-control" formControlName="employeeID" autocomplete="off" />
+                    <span *ngIf="employeeID && employeeID.invalid && employeeID.touched" class="error">Please Enter a Valid ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" class="form-control" formControlName="employeeName" autocomplete="off" />
+                    <span *ngIf="employeeName && employeeName.invalid && employeeName.touched" class="error">Please Enter Your Name</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Phone</label>
+                    <input type="text" class="form-control" formControlName="phoneNumber" autocomplete="off" />
+                    <span *ngIf="phoneNumber && phoneNumber.invalid && phoneNumber.touched" class="error">Please Enter Your Phone Number</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Mail ID</label>
+                    <input type="text" class="form-control" formControlName="mailID" autocomplete="off" />
+                    <span *ngIf="mailID && mailID.invalid && mailID.touched" class="error">Please Enter a Valid Email ID</span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="offset-lg-3 col-lg-6">
+                <div class="form-group">
+                    <label>Address</label>
+                    <input type="text" class="form-control" formControlName="address1" autocomplete="off" />
+                    <span *ngIf="address1 && address1.invalid && address1.touched" class="error">Please Enter Your Phone Address</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="offset-lg-3 col-lg-2">
+                <br>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </div>
+            </div>
+            <div class="col-lg-3">
+                <br>
+                <span class={{messageclass}}>{{message}}</span>
+            </div>
+        </div>
+
+    </form>
+</div>
